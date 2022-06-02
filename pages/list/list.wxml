@@ -1,0 +1,37 @@
+<!--pages/list/list.wxml-->
+<block>
+  <!-- 标题部分 -->
+  <view class="hmly-top-nav">
+    <scroll-view class="hmly-scroll-wrapper" scroll-x >
+      <view class="hmly-navigate-item" wx:for="{{navTitle}}" wx:key="index" data-id="{{item.id}}" bindtap="handleClick">
+        <view class="hmly-names {{item.id==currentTab ? 'active':''}}">{{item.title}}</view>
+				<view class="hmly-currtline {{item.id==currentTab ? 'active':''}}"></view>
+      </view>
+    </scroll-view>
+		<view class="hmly-pull-down">
+      <view class="icon-right"></view>
+		</view>
+  </view>
+  	<!-- 对应的内容区 -->
+	<view class="hmly-content-item" wx:for="{{list[currentTab-1]}}" wx:key="index">
+		<view class="hmly-index-number">
+			<view>{{index > 10 ? index : '0'+(index+1)}}</view>
+		</view>
+		<image src="{{item.image}}"></image>
+		<view class="hmly-content-left">
+			<view class="hmly-content-title">{{item.title}}</view>
+			<view class="hmly-content-text">{{item.trackTitle}}</view>
+			<view class="hmly-count">
+				<view style="margin-right:25rpx;">
+					<text class="icon-video"></text>
+					<text class="">{{item.sell}}</text>
+				</view>
+				<view>
+					<text class="icon"></text>
+					<text class="">{{item.episode}}</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</block>
+

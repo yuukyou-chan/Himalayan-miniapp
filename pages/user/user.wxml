@@ -1,0 +1,86 @@
+<!-- pages/user/user.wxml -->
+<block >
+	<view class="hmly-body" style="height:{{phoneHeight}}px">
+		<!-- 头像昵称签到部分 -->
+		<view class="hmly-top-bar">
+			<!-- 头像昵称 -->
+			<view class="hmly-user-img">
+				<view class="hmly-avatar-nickname">
+					<view class="hmly-avatar">
+						<image class="hmly-avatar-img" src="/image/touxiang.jpg"></image>
+					</view>
+					<view class="hmly-nickname">
+						<text class="#">吴彦组</text>
+						<!-- vip勋章 -->
+						<text class="icon-vip" style="margin-left:30rpx"></text>
+					</view>
+				</view>
+				<view class="hmly-kefu"><text class="icon-service"></text>客服服务</view>
+			</view>
+			<!-- 签到 -->
+			<view class="hmly-qian-dao">
+				<view class="hmly-qian-text">
+					<text class="icon-dateTable text-gray"></text>
+					<text style="margin-left:20rpx">签到</text>
+        </view>
+				<view class="hmly-icon_">
+					<text class="icon-right text-gray"></text>
+				</view>
+			</view>
+		</view>
+		<!-- 选项卡部分 -->
+		<view class="hmly-chioce">
+			<!-- 选项卡item -->
+			<view class="hmly-choice-item" bindtap="openSwitch">
+				<view class="">
+					<text class="icon-time text-gray"></text>
+					<text style="margin-left:20rpx">定时关闭</text>
+				</view>
+				<text class="icon-right text-gray"></text>
+			</view>
+			<view class="hmly-choice-item">
+				<view class="">
+					<text class="icon-tip text-gray"></text>
+					<text style="margin-left:20rpx">夜间模式</text>
+				</view>
+				<switch></switch>
+			</view>
+			<view class="hmly-choice-item">
+				<view class="">
+					<text class="icon-write text-gray"></text>
+					<text style="margin-left:20rpx">意见反馈</text>
+				</view>
+				<text class="icon-right text-gray"></text>
+      </view>
+      <view class="hmly-choice-item">
+				<view class="">
+					<text class="icon-write text-gray"></text>
+					<text style="margin-left:20rpx">修改资料</text>
+				</view>
+				<text class="icon-right text-gray"></text>
+			</view>
+			<view class="hmly-choice-item" bindtap="gotoLogin">
+				<view class="">
+					<text class="icon-changeCount text-gray"></text>
+					<text style="margin-left:20rpx">切换账号</text>
+				</view>
+				<text class="icon-right text-gray"></text>
+			</view>
+		</view>
+	</view>
+</block>
+
+<!-- 定时关闭部分 -->
+<block wx:if="{{show}}">
+	<view class="hmly-switch">
+		<scroll-view class="hmly-scroll-wrapper" scroll-y scroll-with-animation="true" catchtouchmove="preventTouchMove">
+			<view class="hmly-switch-item" wx:for="{{timeout}}" wx:key="{{index}}" bindtap="chooseTimeOut" data-activeIndex="{{index}}">
+        <view>{{item.text}}</view>
+        <!-- 选中标记点-->
+				<view class="hmly-active" wx:if="{{index == activeIndex}}"></view>
+			</view>
+		</scroll-view>
+		<view class="hmly-close" bindtap="close">关闭</view>
+	</view>
+	<view class="hmly-cover"></view>
+</block>

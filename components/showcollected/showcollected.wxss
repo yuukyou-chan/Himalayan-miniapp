@@ -1,0 +1,28 @@
+/* components/showit/showit.wxss */
+.item-box{
+	display: absolute;
+	overflow:hidden;
+	padding: 15rpx 35rpx 25rpx 35rpx;
+	border-bottom: 1rpx solid rgb(230, 230, 230)
+}
+
+image{
+	height: 150rpx;
+	width: 150rpx;
+	/* display: float;
+	float: left; */
+	border-radius: 20rpx;
+}
+
+.item-text{
+	display: inline-block;
+	vertical-align: top;
+	margin: 2rpx 10rpx 2rpx 20rpx;
+}
+
+.trackTitle{
+	font-size:26rpx;
+	font-family: "微软雅黑";
+	color: rgb(210, 210, 210);
+	margin-top: 20rpx;
+}

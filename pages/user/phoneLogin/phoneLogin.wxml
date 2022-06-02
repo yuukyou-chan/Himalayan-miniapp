@@ -1,0 +1,37 @@
+<view class="hmly-main bg-white" style="min-height:{{height}}px">
+	<view class="hmly-content_">
+		<!-- 提示标语 -->
+		<view class="hmly-slogn"> 
+			登录后即可收听你的收藏专辑哦
+		</view>
+		<!-- 表单输入部分 -->
+		<view class="hmly-login">
+			<form class="frombox" report-submit="false" bindsubmit="" bindreset="">
+				<!-- 输入手机号 -->
+				<view class="hmly-phone-number">
+					<view class="hmly-code">+86</view>
+					<input type="number" placeholder="请输入手机号" placeholder-class="hmly-place" maxlength="11"></input>
+				</view>
+				<!-- 输入密码 -->
+				<view class="hmly-yzm">
+					<input type="number" placeholder="输入密码" placeholder-class="hmly-place" password></input>
+				</view>
+        
+				<view class="hmly-submit" bindtap="login">
+          <button bindtap="gotoPage1"><text class="icon-wechat"></text> 立即登录</button>
+				</view>
+			</form>
+		</view>
+		<!-- 其他登录方式 -->
+		<view class="hmly-wechat">
+			<view class="hmly-tips">
+				<view class="hmly-left-line"></view>
+				其他账户登录
+				<view class="hmly-right-line"></view>
+			</view>
+			<view class="hmly-wecaht-login">
+				<button bindtap="gotoPage1"><text class="icon-wechat"></text> 微信登陆</button>
+			</view>
+		</view>
+	</view>
+</view>

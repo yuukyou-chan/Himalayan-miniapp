@@ -1,0 +1,7 @@
+	<view class="item-box" wx:for="{{list}}" wx:key="index">
+			<image src="{{item.imgurl}}"></image>
+			<view class="item-text">
+			<view class="title">{{item.title}}</view>
+			<view class="trackTitle">{{item.title}}</view>
+			</view>
+	</view>

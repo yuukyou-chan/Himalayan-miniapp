@@ -1,0 +1,50 @@
+<!--pages/radio/radio.wxml-->
+<!-- 头部推荐栏  -->
+<view class="hmly-radio-top">
+  <view class="text-orange hmly-text">推荐电台</view>
+  <scroll-view class="hmly-radio-scroll" scroll-x="true">
+    <view class="hmly-radio-scroll-item" wx:for="{{radioList}}" wx:key="index">
+      <image src="{{item.image}}"></image>
+      <view>{{item.title}}</view>
+    </view>
+  </scroll-view>
+</view>
+<image src="https://s2.loli.net/2022/05/30/sPpG5g4NO267TIM.jpg" style="width: 100%;height: 80rpx;"></image>
+<!-- 找电台 -->
+<view class="hmly-mid">
+  <view class="hmly-text" style="color: black;float: left;">找电台</view>
+  <view style="float: right; font-size: 30rpx;">
+    <text class="text-gray">全部分类</text>
+    <text class="icon-down text-gray" style="margin-right: 30rpx;" wx:if="{{!showCover}}"  bindtap="showCate"></text>
+    <text class="icon-up text-gray" style="margin-right: 30rpx;" wx:if="{{showCover}}"  bindtap="closeCate"></text>
+  </view>
+</view>
+<!-- 分类框 -->
+<block wx:if="{{showCover}}" style="position: absolute; top: 520rpx;">
+	<!-- 蒙板内容 要放在蒙板的外面-->
+  <view class="hmly-cate">
+		<view class="hmly-cate-item" wx:for="{{cateList}}"
+			wx:key="index" data-index="{{index}}">
+			{{item}}
+		</view>
+	</view>
+</block>
+<!-- 展示栏 -->
+<view class="hmly-content"  wx:for="{{radioList}}" wx:key="index">
+  <view class="hmly-content-item"> 
+		<image src="{{item.image}}"></image>
+		<view class="hmly-content-right">
+			<view class="hmly-content-title">{{item.title}}</view>
+			<view style="margin-right:25rpx;">
+					<text class="hmly-content-title-vice">正在直播：{{item.playing}}</text>
+			</view>
+      <view class="hmly-count">
+				<view>
+					<text class="icon"></text>
+          <text class="icon-video text-orange"></text>
+					<text class=""> {{item.quantity}}万</text>
+				</view>
+			</view>
+		</view>
+  </view>
+	</view>
